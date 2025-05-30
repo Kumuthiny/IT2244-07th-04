@@ -1,0 +1,222 @@
+Q1). Write a code for small astrology based on your life path number for that get date oh birth from user then calculate life oath number(use switch case)
+		Example:-
+			calculate for life path number:
+						a=date%10
+						b=date/10
+						c=a+b
+			if life path number
+					1.lucky
+					2.Carefully do your work
+					3.Storger
+					4.Happy
+					5.Can Get Help
+					6.Doubt
+					7.Sad
+					8.Like
+					9.Courage
+			
+			
+			
+echo "your Date of birth is :"
+read dateOfBirth
+
+a=$((dateOfBirth%10))
+b=$((dateOfBirth/10))
+c=$((a+b))
+
+case $c is
+1)echo "lucky"
+2)echo "Carefully do your work"
+3)echo "Storger"
+4)echo "Happy"
+5)echo "Can Get Help"
+6)echo "Doubt"
+7)echo "Sad"
+8)echo "Like"
+9)echo "Courage"
+esac
+~
+.
+
+
+
+
+
+
+
+
+#!/bin/bash
+
+echo "Enter your date of birth (as a number, e.g., 23):"
+read dateOfBirth
+
+a=$((dateOfBirth % 10))
+b=$((dateOfBirth / 10))
+c=$((a + b))
+
+# If result is more than 9, reduce it to single digit
+while [ $c -gt 9 ]; do
+  a=$((c % 10))
+  b=$((c / 10))
+  c=$((a + b))
+done
+
+echo "Your Life Path Number is: $c"
+echo -n "Astrology Message: "
+
+case $c in
+  1) echo "Lucky" ;;
+  2) echo "Carefully do your work" ;;
+  3) echo "Stronger" ;;
+  4) echo "Happy" ;;
+  5) echo "Can Get Help" ;;
+  6) echo "Doubt" ;;
+  7) echo "Sad" ;;
+  8) echo "Like" ;;
+  9) echo "Courage" ;;
+  *) echo "Invalid life path number" ;;
+esac
+..................................................................................................................................
+
+Q2). Give list of numbers then calculate the summation and multiplication using for loop
+		Example:-
+			1 2 3 4 5
+				summation = 15
+				multiplication = 120
+				
+#!/bin/bash
+
+echo "Enter a list of numbers (space-separated):"
+read -a numbers
+
+sum=0
+mul=1
+
+for num in "${numbers[@]}"				for((i=1; i<=${#numbers[@]}; i++))
+do
+  sum=$((sum + num))
+  mul=$((mul * num))
+done
+
+echo "Summation = $sum"
+echo "Multiplication = $mul"
+...........................................................................................................................................
+			
+Q3). Print the integers from 1 to 10 using while loop
+		let i=1
+		while [ ]
+		
+#!/bin/bash
+
+i=1
+while [ $i -le 10 ]
+do
+  echo $i
+  i=$((i + 1))
+done
+............................................................................................................................................
+
+
+Q4). Print below pattern using nested loop
+		columns = 7 rows = 7
+			i).*
+			   **
+			   ***
+			   ****
+			   *****
+			   ******
+			   *******
+			   
+#!/bin/bash
+
+for ((i = 1; i <= 7; i++))
+do
+  for ((j = 1; j <= i; j++))
+  do
+    echo -n "*"
+  done
+  echo ""
+done
+
+...................................................................................................................................		   
+			   
+			   
+			ii). *******
+				 ******
+				 *****
+				 ****
+				 ***
+				 **
+				 *
+				 
+#!/bin/bash
+
+for ((i = 7; i >= 1; i--))
+do
+  for ((j = 1; j <= i; j++))
+  do
+    echo -n "*"
+  done
+  echo ""
+done
+.........................................................................................................................................
+				 
+			iii).1
+				 22
+				 333
+				 4444
+				 55555
+				 666666
+				 7777777
+#!/bin/bash
+
+for ((i = 1; i <= 7; i++))
+do
+  for ((j = 1; j <= i; j++))
+  do
+    echo -n "$i"
+  done
+  echo ""
+done
+.........................................................................................................................................
+
+				 
+			iv).1
+				12
+				123
+				1234
+				12345
+				123456
+#!/bin/bash
+
+for ((i = 1; i <= 6; i++))
+do
+  for ((j = 1; j <= i; j++))
+  do
+    echo -n "$j"
+  done
+  echo ""
+done
+.................................................................................................................................
+
+				
+			v).       *
+					*	*
+				  *	  *	  *
+			   *   *    *    *
+			*    *    *    *    *
+#!/bin/bash
+
+rows=5
+for ((i=1; i<=rows; i++))
+do
+  for ((j=i; j<rows; j++))
+  do
+    echo -n "  "
+  done
+  for ((k=1; k<=(2*i-1); k++))
+  do
+    echo -n "* "
+  done
+  echo ""
+done
